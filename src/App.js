@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+
+// I can write all the JavaScript code here bcoz this is not the JSX PART 
+const name ="Deepak"
+const loading = false; 
+const isLoading =true;
+
+if(loading){
+  return <h1>Loading</h1>
+}
+
   return (
+    // This is the JSX PART
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <h1>
+        Hello to this react world!
+        </h1>
+
+        {!isLoading && <p>not logged in</p>}
+        {isLoading && <p>{name}</p>}
+        { /* using javascript expression(javascript expression means whatever code you can write in one line ine javascript)
+        inside JSX by curly braces, You cannot use javascript code */}
+
+       {console.log("hello console")}
+       {new Date().toDateString()} 
+     
+      
     </div>
   );
 }
